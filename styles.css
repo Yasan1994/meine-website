@@ -40,14 +40,7 @@ header {
   max-width: 160px;
   height: auto;
   margin-bottom: 10px;
-  transition: transform 0.3s ease; /* Animation beim Vergrößern */
-  cursor: pointer; /* Zeigt eine Hand beim Hover an */
 }
-
-.logo:hover {
-  transform: scale(1.05); /* Leicht vergrößern beim Hover */
-}
-
 
 nav ul {
   list-style: none;
@@ -62,17 +55,13 @@ nav a {
   color: white;
   text-decoration: none;
   padding: 8px 12px;
-  display: inline-block; /* <--- wichtig */
-  transition: background-color 1s, transform 0.2s ease;
+  transition: background-color 0.3s;
 }
-
 
 nav a:hover {
   background-color: #555;
   border-radius: 5px;
-  transform: scale(1.05); /* statt 1.1 */
 }
-
 
 /* ===== Hauptbereich (zentriert, flexibler Inhalt) ===== */
 main {
@@ -110,9 +99,51 @@ main h1 {
   height: auto;
   border-radius: 10px;
   margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* ===== Info-Blöcke für andere Seiten ===== */
+.bild-box img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Modal für Bildanzeige ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  max-width: 70%;
+  max-height: 70%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* ===== Info-Blöcke ===== */
 .info-block {
   display: flex;
   align-items: center;
@@ -126,6 +157,7 @@ main h1 {
   max-width: 300px;
   height: auto;
   border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* ===== Kontaktformular ===== */
@@ -187,14 +219,20 @@ footer {
   main {
     padding: 30px 15px;
   }
+
+  .modal-content {
+    max-width: 90%;
+    max-height: 80%;
+  }
 }
 
+/* ===== Kontaktseite Titel ===== */
 .Kontaktseite h1 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-/* ===== button auf der Hauptseite ===== */
 
+/* ===== Button auf der Hauptseite ===== */
 .button {
   padding: 1em 2em;
   border: none;
@@ -204,7 +242,7 @@ footer {
   text-transform: uppercase;
   cursor: pointer;
   color: #000000;
-  transition: all 0,4s;
+  transition: all 0.4s;
   font-size: 15px;
   position: relative;
   overflow: hidden;
@@ -213,14 +251,14 @@ footer {
   margin-bottom: 20px;
 }
 
-button:hover {
+.button:hover {
   color: #ffffff;
   transform: scale(1.1);
   outline: 2px solid #e7e7e7;
   box-shadow: 4px 5px 17px -4px #686868;
 }
 
-button::before {
+.button::before {
   content: "";
   position: absolute;
   left: -50px;
@@ -233,41 +271,6 @@ button::before {
   transition: width 1000ms;
 }
 
-button:hover::before {
+.button:hover::before {
   width: 250%;
 }
-
-/* Lightbox-Hintergrund */
-#lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-/* Das vergrößerte Bild */
-#lightbox-img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s;
-}
-
-/* Hover-Zoom für kleine Bilder */
-.bild-box img {
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.bild-box img:hover {
-  transform: scale(1.05);
-}
-
-
