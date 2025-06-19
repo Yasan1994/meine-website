@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startseite</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header>
+      <a href="index.html">
+        <img src="logo.png" alt="Logo" class="logo" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="startseite.html">Startseite</a></li>
+          <li><a href="ueberuns.html">Über uns</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HAUPTINHALT -->
+    <main>
+      <h1>Startseite</h1>
+
+      <div class="bilder-reihe">
+        <div class="bild-box">
+          <img src="1.jpg" alt="Bild 1" onclick="vergroessereBild(this)">
+          <p>Das ist das erste Bild</p>
+        </div>
+
+        <div class="bild-box">
+          <img src="2.jpg" alt="Bild 2" onclick="vergroessereBild(this)">
+          <p>Das ist das zweite Bild</p>
+        </div>
+
+        <div class="bild-box">
+          <img src="2.jpg" alt="Bild 2" onclick="vergroessereBild(this)">
+          <p>Das ist das dritte Bild</p>
+        </div>
+
+        <div class="bild-box">
+          <img src="2.jpg" alt="Bild 2" onclick="vergroessereBild(this)">
+          <p>Das ist das vierte Bild</p>
+        </div>
+
+        <div class="bild-box">
+          <img src="2.jpg" alt="Bild 2" onclick="vergroessereBild(this)">
+          <p>Das ist das fünfte Bild</p>
+        </div>
+
+        <div class="bild-box">
+          <img src="2.jpg" alt="Bild 2" onclick="vergroessereBild(this)">
+          <p>Das ist das sechste Bild</p>
+        </div>
+
+        <div class="bild-box">
+          <img src="2.jpg" alt="Bild 2" onclick="vergroessereBild(this)">
+          <p>Das ist das siebte Bild</p>
+        </div>
+
+        <div class="bild-box">
+          <img src="2.jpg" alt="Bild 2" onclick="vergroessereBild(this)">
+          <p>Das ist das achte Bild</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- FUSSZEILE -->
+  <footer>
+    <p>&copy; 2025 Meine Webseite | <a href="AGB.html">AGB</a> | <a href="Datenschutz.html">Datenschutz</a></p>
+  </footer>
+
+  <!-- Lightbox-Overlay für vergrößerte Bilder -->
+<div id="lightbox" onclick="schliesseLightbox()">
+  <img id="lightbox-img" src="" alt="Vergrößertes Bild">
+</div>
+
+<script>
+function vergroessereBild(imgElement) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  lightboxImg.src = imgElement.src;
+  lightbox.style.display = "flex";
+}
+
+function schliesseLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
